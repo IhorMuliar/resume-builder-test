@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.title {
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  background-color: var(--mat-sys-surface);
+}
+
+.mat-stepper-horizontal {
+  height: 100%;
+}
+
+.step-content {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.step-actions {
+  display: flex;
+  column-gap: 10px;
+}

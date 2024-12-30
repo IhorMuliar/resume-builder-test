@@ -1,0 +1,39 @@
+<form [formGroup]="formGroup">
+  <mat-form-field appearance="outline">
+    <mat-label>Ім'я</mat-label>
+    <input matInput formControlName="firstName" />
+    @if (hasError('firstName', 'required')) {
+      <mat-error>Введіть ваше ім'я</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Прізвище</mat-label>
+    <input matInput formControlName="lastName" />
+    @if (hasError('lastName', 'required')) {
+      <mat-error>Введіть ваше прізвище</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Дата народження</mat-label>
+    <input matInput type="date" formControlName="birthDate" />
+    @if (hasError('birthDate', 'required')) {
+      <mat-error>Введіть вашу дату народження</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" />
+    @if (hasError('email', 'required')) {
+      <mat-error>Введіть ваш email</mat-error>
+    } @else if (hasError('email', 'email')) {
+      <mat-error>Неправильний формат email</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Номер телефону</mat-label>
+    <input matInput type="tel" formControlName="phone" />
+    @if (hasError('phone', 'required')) {
+      <mat-error>Введіть ваш номер телефону</mat-error>
+    }
+  </mat-form-field>
+</form>

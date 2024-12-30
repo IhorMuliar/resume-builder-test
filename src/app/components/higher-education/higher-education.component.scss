@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.education-details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.education {
+  display: flex;
+  column-gap: 20px;
+  align-items: baseline;
+}
+
+.mat-mdc-button {
+  max-width: 300px;
+}
+
+.mat-mdc-form-field {
+  max-width: 400px;
+}

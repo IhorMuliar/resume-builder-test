@@ -1,0 +1,53 @@
+<h1 class="title">Resume Builder</h1>
+<mat-stepper [linear]="false" labelPosition="bottom" [formGroup]="resultForm">
+  <mat-step [stepControl]="aboutFormGroup">
+    <ng-template matStepLabel>Про мене</ng-template>
+    <div class="step-content">
+      <app-about [formGroup]="aboutFormGroup"></app-about>
+    </div>
+    <div class="step-actions">
+      <button mat-flat-button matStepperNext>Далі</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="educationFormGroup">
+    <ng-template matStepLabel>Освіта</ng-template>
+    <div class="step-content">
+      <app-education [formGroup]="educationFormGroup"></app-education>
+    </div>
+    <div class="step-actions">
+      <button mat-stroked-button matStepperPrevious>Назад</button>
+      <button mat-flat-button matStepperNext>Далі</button>
+    </div>
+  </mat-step>
+  @if (higherEducationFlag) {
+    <mat-step [stepControl]="educationFormGroup">
+      <ng-template matStepLabel>Вища освіта</ng-template>
+      <div class="step-content">
+        <app-higher-education [formGroup]="higherEducationFormGroup"></app-higher-education>
+      </div>
+      <div class="step-actions">
+        <button mat-stroked-button matStepperPrevious>Назад</button>
+        <button mat-flat-button matStepperNext>Далі</button>
+      </div>
+    </mat-step>
+  }
+  <mat-step [stepControl]="educationFormGroup">
+    <ng-template matStepLabel>Досвід роботи</ng-template>
+    <div class="step-content">
+      <app-work-experience [formGroup]="workExperienceFormGroup"></app-work-experience>
+    </div>
+    <div class="step-actions">
+      <button mat-stroked-button matStepperPrevious>Назад</button>
+      <button mat-flat-button matStepperNext>Далі</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Результат</ng-template>
+    <div class="step-content">
+    <app-result [formGroup]="resultForm"></app-result>
+    </div>
+    <div class="step-actions">
+      <button mat-stroked-button matStepperPrevious>Назад</button>
+    </div>
+  </mat-step>
+</mat-stepper>

@@ -1,0 +1,36 @@
+<form [formGroup]="formGroup">
+  <div formArrayName="educationDetails" class="education-details">
+    @for (institution of educationDetails.controls; track institution; let i = $index) {
+      <div [formGroupName]="i" class="education">
+        <mat-form-field appearance="outline">
+          <mat-label>Назва закладу</mat-label>
+          <input matInput formControlName="institution" />
+          @if (institution.get('institution')?.hasError('required')) {
+            <mat-error>Введіть назву навчального закладу</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Початок навчання</mat-label>
+          <input matInput type="date" formControlName="startDate" />
+          @if (institution.get('startDate')?.hasError('required')) {
+            <mat-error>Введіть дату початку навчання</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Закінчення навчання</mat-label>
+          <input matInput type="date" formControlName="endDate" />
+          @if (institution.get('endDate')?.hasError('required')) {
+            <mat-error>Введіть дату закінчення навчання</mat-error>
+          }
+        </mat-form-field>
+        @if (educationDetails.length > 1) {
+          <button mat-icon-button color="warn" (click)="removeInstitution(i)">
+            <mat-icon>remove_circle</mat-icon>
+          </button>
+        }
+      </div>
+    }
+  </div>
+  <button mat-button color="primary" (click)="addInstitution()">Додати навчальний заклад</button>
+  <mat-checkbox formControlName="higherEducation">Маю вищу освіту</mat-checkbox>
+</form>

@@ -1,0 +1,84 @@
+<form [formGroup]="formGroup">
+  <div formGroupName="aboutMe">
+    <mat-form-field appearance="outline">
+      <mat-label>Ім'я</mat-label>
+      <input matInput formControlName="firstName" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Прізвище</mat-label>
+      <input matInput formControlName="lastName" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Дата народження</mat-label>
+      <input matInput type="date" formControlName="birthDate" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Номер телефону</mat-label>
+      <input matInput type="tel" formControlName="phone" />
+    </mat-form-field>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div formGroupName="education">
+    <mat-form-field appearance="outline">
+      <mat-label>Назва закладу</mat-label>
+      <input matInput formControlName="institution" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Початок навчання</mat-label>
+      <input matInput type="date" formControlName="startDate" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Закінчення навчання</mat-label>
+      <input matInput type="date" formControlName="endDate" />
+    </mat-form-field>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  @if(formGroup.get('higherEducation')?.value) {
+    <div formGroupName="higherEducation">
+      <mat-form-field appearance="outline">
+        <mat-label>Назва закладу</mat-label>
+        <input matInput formControlName="institution" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Початок навчання</mat-label>
+        <input matInput type="date" formControlName="startDate" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Закінчення навчання</mat-label>
+        <input matInput type="date" formControlName="endDate" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Ступінь</mat-label>
+        <input matInput formControlName="endDate" />
+      </mat-form-field>
+    </div>
+    <mat-divider></mat-divider>
+  }
+
+  <div formGroupName="workExperience">
+    <mat-form-field appearance="outline">
+      <mat-label>Місце роботи</mat-label>
+      <input matInput formControlName="workName" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Початок навчання</mat-label>
+      <input matInput type="date" formControlName="startDate" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Закінчення навчання</mat-label>
+      <input matInput type="date" formControlName="endDate" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Посаду</mat-label>
+      <input matInput formControlName="position" />
+    </mat-form-field>
+  </div>
+</form>
